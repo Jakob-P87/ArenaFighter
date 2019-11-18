@@ -3,19 +3,35 @@ package models;
 public class Character
 {
     private final String characterName;                 //The character name
+    private  int level;
+    private int startHealth;
     private int health;                                 //Character health
     private int strength;                               //Character Strength
+    private int defence;
 
     public Character(String name)
     {
         this.characterName = name;
+        this.level = 1;
+        this.startHealth = 30;
         this.health = 30;
         this.strength = 5;
+        this.defence = 3;
     }
 
     public String getName()                             //Get the name of character
     {
         return characterName;
+    }
+
+    public int getStartHealth()
+    {
+        return startHealth;
+    }
+
+    public void setStartHealth(int startHealth)
+    {
+        this.startHealth = startHealth;
     }
 
     public int getHealth()                              //Get the health of character
@@ -36,5 +52,25 @@ public class Character
     public void setStrength(int strength)
     {
         this.strength = strength;
+    }
+
+    public int getDefence()
+    {
+        return defence;
+    }
+
+    public void setDefence(int defence)
+    {
+        this.defence = defence;
+    }
+
+    public int getLevel()
+    {
+        return level;
+    }
+
+    public void setLevel()
+    {
+        this.level++;
     }
 }

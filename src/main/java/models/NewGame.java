@@ -5,11 +5,11 @@ import se.lexicon.jakob.MainGame;
 public class NewGame
 {
     private static Character newCharacter;
-    private static BattleSequence battle;
+    private static Intermission menu;
 
     public void newGame()
     {
-        battle = new BattleSequence();
+        menu = new Intermission();
         System.out.print("What is your champions name?" + "\n" + "Name: ");
         String name = MainGame.scan.nextLine().trim();
 
@@ -21,6 +21,6 @@ public class NewGame
 
         newCharacter = new Character(name);
 
-        battle.Battle(newCharacter);
+        menu.menu(newCharacter);
     }
 }

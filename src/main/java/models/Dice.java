@@ -13,7 +13,7 @@ public class Dice
 
     private int rollDice()
     {
-        int[] roll = {1,2,3,4,5,6};
+        int[] roll = {1, 2, 3, 4, 5, 6};
 
         Random random = new Random();
         int newRoll = random.nextInt(roll.length);
