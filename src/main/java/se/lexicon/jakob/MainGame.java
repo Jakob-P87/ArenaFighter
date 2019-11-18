@@ -21,27 +21,31 @@ public class MainGame
 
         boolean keepAlive = true;
 
-        while(keepAlive)
+        while (keepAlive)
         {
 
             System.out.println("==================[ARENA FIGHTER ULTIMATE EDITION]==================");
             System.out.println("     =======================[Main Menu]========================");
-            System.out.print("#New Game" +
-                    "\n" + "#Exit Game");
-
-            int choice = Integer.parseInt(scan.nextLine().trim());
-
-            switch (choice)
+            System.out.print("                      [New Game] " + "  [Exit Game] ");
+            try
             {
-                case 1:
-                    System.out.println("New Game");
-                    newGame.newGame();
-                    break;
-                case 2:
-                    System.out.println("Exit Game");
-                    keepAlive = false;
-                    break;
-                default:
+                int choice = Integer.parseInt(scan.nextLine().trim());
+
+                switch (choice)
+                {
+                    case 1:
+                        System.out.println("New Game");
+                        newGame.newGame();
+                        break;
+                    case 2:
+                        System.out.println("Exit Game");
+                        keepAlive = false;
+                        break;
+                    default:
+                }
+            } catch (Exception a)
+            {
+                System.out.println("Invalid input!");
             }
         }
         scan.close();

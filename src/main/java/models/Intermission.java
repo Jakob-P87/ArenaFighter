@@ -6,7 +6,6 @@ public class Intermission
 {
     private BattleSequence battle;
     private MainGame mainMenu;
-    private Enemy enemy;
 
     public void menu(Character player)
     {
@@ -15,34 +14,39 @@ public class Intermission
 
         boolean runMenu = true;
 
-        while(runMenu)
+        while (runMenu)
         {
-            System.out.println("====================");
-            System.out.println("[" + player.getName() + " LVL:" + player.getLevel() + "]");
+            System.out.println("=======[Menu]=======");
+            System.out.println("[" + player.getName() + "]");
             System.out.println("Hp:" + player.getHealth() +
                     " Str:" + player.getStrength() +
                     " Def:" + player.getDefence());
             System.out.println("====================");
 
-            System.out.print("#New Battle" +
-                    "\n" + "#Shop" +
-                    "\n" + "#Exit game");
+            System.out.print("[Fight]" +
+                    " [Shop]" +
+                    " [Exit game]");
 
-            int choice = Integer.parseInt(MainGame.scan.nextLine());
-
-            switch (choice)
+            try
             {
-                case 1:
-                    battle.Battle(player);
+                int choice = Integer.parseInt(MainGame.scan.nextLine());
 
-                    break;
-                case 2:
+                switch (choice)
+                {
+                    case 1:
+                        battle.Battle(player);
+                        break;
+                    case 2:
 
-                    break;
-                case 3:
-                    runMenu = false;
-                    break;
-                default:
+                        break;
+                    case 3:
+                        runMenu = false;
+                        break;
+                    default:
+                }
+            } catch (Exception a)
+            {
+                System.out.println("Invalid input!");
             }
         }
     }

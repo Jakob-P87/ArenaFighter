@@ -3,7 +3,6 @@ package models;
 public class Character
 {
     private final String characterName;                 //The character name
-    private  int level;
     private int startHealth;
     private int health;                                 //Character health
     private int strength;                               //Character Strength
@@ -11,8 +10,7 @@ public class Character
 
     public Character(String name)
     {
-        this.characterName = name;
-        this.level = 1;
+        this.characterName = name.substring(0,1).toUpperCase() + name.substring(1);
         this.startHealth = 30;
         this.health = 30;
         this.strength = 5;
@@ -62,15 +60,5 @@ public class Character
     public void setDefence(int defence)
     {
         this.defence = defence;
-    }
-
-    public int getLevel()
-    {
-        return level;
-    }
-
-    public void setLevel()
-    {
-        this.level++;
     }
 }
