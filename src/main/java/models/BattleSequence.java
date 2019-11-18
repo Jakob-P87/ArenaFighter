@@ -4,16 +4,20 @@ import se.lexicon.jakob.MainGame;
 
 public class BattleSequence
 {
-    private static Character playerCharacter;
     private static Enemy enemy;
+    private static Dice rollDice;
 
     public void Battle(Character player)
     {
         enemy = new Enemy();
 
-        while (enemy.getHealth() > 0)
-        {
+        boolean runBattle = true;
 
+        while (runBattle)
+        {
+            rollDice = new Dice(); //Reset the dice to get a new random roll inside the loop, not before
+            System.out.println("What do you want to do?");
+            System.out.println("#Attack" + "\n" + "#Defend");
             int choice = Integer.parseInt(MainGame.scan.nextLine());
 
             switch (choice)
@@ -25,7 +29,14 @@ public class BattleSequence
                     break;
                 default:
             }
+            System.out.println(enemy.getEnemyName());
             System.out.println("Enemy has " + enemy.getHealth() + " HP");
+
+            if (enemy.getHealth() <= 0)
+            {
+                System.out.println(enemy.getEnemyName() + " is dead!");
+                runBattle = false;
+            }
         }
 
 
@@ -35,7 +46,8 @@ public class BattleSequence
     {
         if (enemy.getHealth() > 0);
         {
-            enemy.setHealth(enemy.getHealth() - player.getStrength());
+            System.out.println("You rolled " + rollDice.getDice());
+            enemy.setHealth(enemy.getHealth() - player.getStrength() - rollDice.getDice());
         }
     }
 
