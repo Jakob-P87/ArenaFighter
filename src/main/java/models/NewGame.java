@@ -10,8 +10,9 @@ public class NewGame
     public void newGame()
     {
         battle = new BattleSequence();
-
+        System.out.print("What is your champions name?" + "\n" + "Name: ");
         String name = MainGame.scan.nextLine().trim();
+
 
         while(name.isEmpty())
         {

@@ -4,12 +4,12 @@ public class Character
 {
     private final String characterName;                 //The character name
     private int health;                                 //Character health
-    private int strength;
+    private int strength;                               //Character Strength
 
     public Character(String name)
     {
         this.characterName = name;
-        this.health = 100;
+        this.health = 30;
         this.strength = 5;
     }
 

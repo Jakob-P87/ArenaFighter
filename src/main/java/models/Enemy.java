@@ -11,7 +11,7 @@ public class Enemy
     public Enemy()
     {
         this.enemyName = randomEnemyNames();
-        this.health = 100;
+        this.health = 30;
         this.strength = 5;
     }
 
